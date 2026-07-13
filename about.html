@@ -1,34 +1,145 @@
 <!DOCTYPE html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
-    <style>
-        :root { --bg: #FCFBF8; --text: #2C2C2C; --sub: #888; --border: #EAE6DF; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: var(--bg); color: var(--text); font-family: system-ui, sans-serif; line-height: 1.6; display: flex; min-height: 100vh; }
-        
-        .sidebar { width: 220px; padding: 50px 30px; border-right: 1px solid var(--border); position: sticky; top: 0; height: 100vh; }
-        .sidebar h1 { font-size: 18px; margin-bottom: 40px; }
-        .sidebar nav a { display: block; color: var(--sub); text-decoration: none; font-size: 15px; margin-bottom: 18px; }
-        .sidebar nav a:hover, .sidebar nav a.active { color: var(--text); }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About</title>
 
-        .content { flex: 1; padding: 50px 60px; max-width: 800px; }
-        .content h2 { font-size: 20px; margin-bottom: 30px; }
-        .post-list li { margin-bottom: 25px; }
-        .post-list a { font-size: 17px; color: var(--text); text-decoration: none; font-weight: 500; }
-        .post-list a:hover { text-decoration: underline; }
-        .post-date { font-size: 13px; color: var(--sub); margin-top: 4px; }
-    </style>
+<style>
+:root {
+    --bg:#FCFBF8;
+    --text:#2C2C2C;
+    --sub:#888;
+    --border:#EAE6DF;
+}
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body {
+    background:var(--bg);
+    color:var(--text);
+    font-family:system-ui,sans-serif;
+    line-height:1.6;
+    min-height:100vh;
+    display:flex;
+}
+
+/* 左侧栏 */
+.sidebar {
+    width:220px;
+    padding:40px 30px;
+    border-right:1px solid var(--border);
+    flex-shrink:0;
+}
+
+.sidebar h1 {
+    font-size:18px;
+    margin-bottom:35px;
+}
+
+nav a {
+    display:block;
+    color:var(--sub);
+    text-decoration:none;
+    font-size:15px;
+    margin-bottom:15px;
+}
+
+nav a:hover,
+nav .active {
+    color:var(--text);
+}
+
+
+/* 内容 */
+.content {
+    width:100%;
+    max-width:760px;
+    padding:50px 40px;
+}
+
+.content h2 {
+    font-size:20px;
+    margin-bottom:30px;
+}
+
+.post-list {
+    list-style:none;
+}
+
+.post-list li {
+    margin-bottom:25px;
+}
+
+.post-list a {
+    color:var(--text);
+    text-decoration:none;
+    font-size:17px;
+}
+
+.post-list a:hover {
+    text-decoration:underline;
+}
+
+.post-date {
+    color:var(--sub);
+    font-size:13px;
+}
+
+
+/* 手机 */
+@media(max-width:600px){
+
+    body {
+        display:block;
+    }
+
+    .sidebar {
+        width:100%;
+        height:auto;
+        padding:25px 20px;
+        border-right:none;
+        border-bottom:1px solid var(--border);
+    }
+
+    .sidebar h1 {
+        margin-bottom:15px;
+    }
+
+    nav {
+        display:flex;
+        gap:20px;
+    }
+
+    nav a {
+        margin:0;
+    }
+
+    .content {
+        padding:30px 20px;
+    }
+
+}
+</style>
+
 </head>
+
+
 <body>
-    <aside class="sidebar">
-        <h1>./</h1>
-        <nav>
-            <a href="index.html" >Home</a>
-            <a href="about.html"class="active">About</a>
-        </nav>
-    </aside>
+
+<aside class="sidebar">
+
+<h1>./</h1>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html"class=active>About</a>
+</nav>
+
+</aside>
 
     <main class="content">
         <h2>./About</h2>
